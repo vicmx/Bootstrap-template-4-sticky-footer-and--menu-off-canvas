@@ -1,0 +1,212 @@
+/*
+ * html/body styles for Off Canvas and Sticky Footer
+ * --------------------------------------------------
+ */
+ html,
+ body {
+   overflow-x: hidden; /* Prevent scroll on narrow devices */
+ }
+ 
+ body {
+   padding-top: 56px;
+ }
+
+ 
+ main > .container {
+  padding: 60px 15px 0;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+ .navbar{
+  -webkit-transition:500ms ease;
+  transition:500ms ease;
+}/*
+.navbar-default.scrolled{
+  background-color:rgba(100, 13, 74, 0.9)!important;  
+} */
+
+.container-hamburger {
+  display: inline-block;
+  cursor: pointer;
+}
+
+nav .hamburger1, nav .hamburger2, nav .hamburger3 {
+  width: 25px;
+  height: 2px;
+  background-color:#333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+nav .change .hamburger1 {
+  -webkit-transform: rotate(-32deg) translate(-6px, 6px);
+  transform: rotate(-40deg) translate(-6px, 6px);
+}
+
+nav .change .hamburger2 {opacity: 0;}
+
+nav .change .hamburger3 {
+  -webkit-transform: rotate(40deg) translate(5px, -6px);
+  transform: rotate(40deg) translate(-5px, -6px);
+}
+
+.navbar .navbar-brand{
+  color:black!important;  
+} 
+.navbar.bg-primary .navbar-brand{
+  color:white!important;  
+} 
+/*
+ * Cambia de color cuando baja el scroll
+ * --------------------------------------------------
+ */
+
+.navbar.bg-primary .hamburger1,
+.navbar.bg-primary .hamburger2,
+.navbar.bg-primary .hamburger3{
+  background-color:white!important;  
+}
+
+/* .navbar-default.scrolled .nav-link {
+  color:white
+} */
+.offcanvas-header{ display:none; }
+
+
+@media (max-width: 991.98px) {
+  .offcanvas-header{ display:block; }
+  .offcanvas-collapse {
+    position: fixed;
+    top: 0; /* Height of navbar 56 px*/
+    bottom: 0;
+    left: 0;
+    width: 46%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color:#007bff;
+    transform:translateX(-100%);
+    transition: visibility .2s ease-in-out, transform .2s ease-in-out;
+  }
+  .offcanvas-collapse.open {
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .screen-overlay {
+    width:0%;
+    height: 100%;
+    z-index: 30;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity:0;
+    visibility:hidden;
+    background-color: rgba(34, 34, 34, 0.6);
+    transition:opacity .2s linear, visibility .1s, width 1s ease-in;
+  }
+  .screen-overlay.show {
+      transition:opacity .5s ease, width 0s;
+      opacity:1;
+      width:100%;
+      visibility:visible;
+  }
+}
+
+
+#page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: #FFF none repeat scroll 0% 0%;
+  z-index: 99999;
+  }
+  #page-loader .preloader-interior {
+      display: block;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      width: 150px;
+      height: 150px;
+      margin: -75px 0 0 -75px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #3498db;
+   
+      -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+            animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+  }
+  #page-loader .preloader-interior:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #e74c3c;
+   
+      -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+        animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+  }
+   
+  #page-loader .preloader-interior:after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #f9c922;
+   
+      -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+        animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+  }
+   
+  @-webkit-keyframes spin {
+      0%   { 
+          -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: rotate(0deg);  /* IE 9 */
+          transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+      }
+      100% {
+          -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: rotate(360deg);  /* IE 9 */
+          transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+      }
+  }
+  @keyframes spin {
+      0%   { 
+          -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: rotate(0deg);  /* IE 9 */
+          transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+      }
+      100% {
+          -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: rotate(360deg);  /* IE 9 */
+          transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+      }
+  }

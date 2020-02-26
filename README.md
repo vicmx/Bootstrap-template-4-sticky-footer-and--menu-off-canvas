@@ -1,4 +1,4 @@
-# Bootstrap-template-4-sticky-footer-and--menu-off-canvas
+# Bootstrap 4 template con sticky footer y menú de navegación en móvil off canvas
 Responsive Navbar and sticky footer, with menu offcanvas view on mobile for Bootstrap 4
 
 
